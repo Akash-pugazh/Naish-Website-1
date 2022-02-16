@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap");
+
+:root {
+  --primary-color: #293f50;
+  --lightblue-color: #5d8a80;
+  --light-color: #ffffff;
+}
+
+body {
+  margin: 0 2rem 0 0;
+  background-color: #293f50;
+}
+
+/* Nav */
+
+nav {
+  display: grid;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  text-align: center;
+  padding: 0 5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+}
+#left {
+  grid-area: left;
+}
+#right1 {
+  grid-area: right1;
+}
+#right2 {
+  grid-area: right2;
+}
+.main-nav {
+  display: grid;
+  grid-template-areas:
+    "left right1"
+    "left right2";
+}
+.main-nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+}
+#Index {
+  color: var(--light-color);
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+#Index:hover {
+  color: var(--lightblue-color);
+}
+
+h1 {
+  text-align: left;
+  font-size: 2.5rem;
+  line-height: 2.3rem;
+}
+.main-nav li {
+  list-style-type: none;
+  border: 1px solid gray;
+  border-radius: 0.1rem;
+  padding: 0.5rem;
+  box-shadow: 0px 1px 1px gray;
+}
+
+.main-nav li:hover {
+  background-color: var(--lightblue-color);
+  color: #ffffff;
+}
+
+.main-nav p {
+  color: rgb(0, 0, 0);
+  text-align: right;
+  margin: 40px 0px 0px 0px;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+/* Head */
+
+.head {
+  background: linear-gradient(to right, rgb(67, 255, 255), white);
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  font-weight: 300;
+  padding: 2.5% 15%;
+  color: var(--lightblue-color);
+}
+
+/* Main */
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem 10rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  color: var(--lightblue-color);
+  background-color: var(--light-color);
+}
+main p,
+li {
+  color: gray;
+  font-weight: 300;
+}
+#price {
+  font-weight: 600;
+  font-style: italic;
+  color: rgba(128, 128, 128, 0.8);
+}
+
+/* Form */
+
+form {
+  width: 100%;
+  display: grid;
+  justify-content: space-around;
+  color: rgba(93, 138, 128, 0.7);
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+#purchase-btn {
+  margin: 0.5rem 0;
+  padding: 1rem 0.5rem;
+  background-color: var(--lightblue-color);
+  color: #ffffff;
+  border-radius: 0.5rem;
+  text-align: center;
+  border: none;
+}
+#purchase-btn:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Footer */
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+footer p {
+  position: relative;
+  left: 5%;
+}
+footer ul {
+  display: flex;
+}
+footer li {
+  list-style-type: none;
+  padding: 0 0.5rem;
+}
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+}
+footer li:hover {
+  background-color: var(--lightblue-color);
+  color: #ffffff;
+}
+
+@media (max-width: 1000px) {
+  main {
+    padding: 2rem 5rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .main-nav {
+    grid-template-areas:
+      "left"
+      "right1"
+      "right2";
+    padding: 1rem;
+  }
+  h1 {
+    text-align: left;
+    font-size: 2.5rem;
+    margin: 1rem 0 0 0;
+  }
+  main {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+    padding: 1.5rem 3rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .main-nav {
+    grid-template-areas:
+      "left"
+      "right1"
+      "right2";
+    padding: 0 2rem;
+  }
+
+  .main-nav ul {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .main-nav li {
+    padding: 0.3rem;
+    box-shadow: 0px 0px 1px gray;
+  }
+  .copyrit {
+    grid-area: copy;
+  }
+  .footnav {
+    grid-area: footnav;
+  }
+  footer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "footnav"
+      "copy";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  footer ul {
+    padding: 0;
+  }
+  footer p {
+    position: static;
+  }
+  footer ul {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+/* OK bye */
